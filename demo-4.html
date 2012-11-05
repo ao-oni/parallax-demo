@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/vendor/modernizr-2.6.1.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+	.bg-box{height: 640px; color:#333745;
+		background-size: contain;
+	}
+	.bg-box p {
+		padding: 50px;
+		margin:0px;
+		line-height: 1.5em;
+	}
+	#parallax-bg-01{
+		background:url(img/parallax-bg-01.png) left top no-repeat #F6F792;
+	}
+	#parallax-bg-02{
+		background:url(img/parallax-bg-02.png) left top no-repeat #77C4D3;
+	}
+	#parallax-bg-03{
+		background:url(img/parallax-bg-03.png) left top no-repeat #DAEDE2;
+	}
+	#parallax-bg-04{
+		background:url(img/parallax-bg-04.png) left top no-repeat #EA2E49;
+	}
+	#parallax-bg-05{
+		background:url(img/parallax-bg-05.png) left top no-repeat #D9CC3C;
+	}
+	
+	/*　オーバーレイ表示するドットナビ　*/
+	#dot-navi{
+		position: fixed;
+		right: 10px;
+		top: 50%;
+		margin-top: -100px;
+	}
+	#dot-navi li{
+		list-style-type: none;
+	}
+	#dot-navi li a{
+		text-decoration: none;
+		color: #3B424D;
+		display:block;
+		font-size:20px;
+	}
+	#iphone-360{
+		position: fixed;
+		width: 420px;
+		height: 595px;
+		left: 0px;
+		top: 0px;
+	}
+	#load-island{display: none;}
+	</style>
+</head>
+<body>
+<div id="parallax-bg-01" class="bg-box"><p>Lorem ipsum dolor sit amet, duo ea enim regione. Ex ius novum veniam gubergren. Eos oporteat efficiendi suscipiantur in, at aliquid voluptaria est. Dicit discere interpretaris ei usu, an mel dicant viderer ponderum. Vivendum abhorreant eam ea.</p></div>
+<div id="parallax-bg-02" class="bg-box"><p>Id movet conceptam constituam pri. Quis equidem mea ne, nec nemore saperet epicurei at. Duis posse maluisset per te, ex graecis evertitur conceptam usu. Scaevola cotidieque ea sea, mentitum volutpat vix ut. Timeam euripidis posidonium cu cum.</p></div>
+<div id="parallax-bg-03" class="bg-box"><p>Putent dicunt posidonium ne vis. Eos ei movet electram expetenda, at tollit fierent vix. At vel ludus dicant. Quot inani ne sea, ei has minim quidam recusabo. Oratio consequat referrentur pri ut. Liber dolore sanctus cu ius.</p></div>
+<div id="parallax-bg-04" class="bg-box"><p>In legimus molestie mandamus usu, id purto partiendo quo. Error accusam intellegat est ad. Eum atomorum perpetua voluptatibus ex, mei dolore eripuit ea. Quo quod invidunt ei, id petentium gloriatur scripserit sed. Ne oratio aliquam qui.</p></div>
+<div id="parallax-bg-05" class="bg-box"><p>Eum ei dolorem salutatus, et oblique epicuri mei. Cu eros doming vis, augue alterum ex vel. Suas meis liber in pro. Numquam consectetuer per ei, cum civibus verterem legendos no, te modo delenit atomorum sed. Dico graece duo ei, te vel zril maiorum albucius, id molestiae dissentiet quo. Suas errem abhorreant cu his.</p></div>
+<ul id="dot-navi">
+<li><a href="#parallax-bg-01">●</a></li>
+<li><a href="#parallax-bg-02">●</a></li>
+<li><a href="#parallax-bg-03">●</a></li>
+<li><a href="#parallax-bg-04">●</a></li>
+<li><a href="#parallax-bg-05">●</a></li>
+</ul>
+<div id="iphone-360"></div>
+<div id="load-island">
+<img src="img/iphone-01.png" alt="" />
+<img src="img/iphone-02.png" alt="" />
+<img src="img/iphone-03.png" alt="" />
+<img src="img/iphone-04.png" alt="" />
+<img src="img/iphone-05.png" alt="" />
+<img src="img/iphone-06.png" alt="" />
+<img src="img/iphone-07.png" alt="" />
+<img src="img/iphone-08.png" alt="" />
+<img src="img/iphone-09.png" alt="" />
+<img src="img/iphone-10.png" alt="" />
+<img src="img/iphone-11.png" alt="" />
+<img src="img/iphone-12.png" alt="" />
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.js"><\/script>')</script>
+<script src="js/main.js"></script>
+<script>
+$(function(){
+	//	初期化
+	//	iPhone360部分の初期化
+	$("#iphone-360").css('background-image','url(./img/iphone-'　+ '01' + '.png)');
+	var iphone_top = $("#iphone-360").offset().top;
+	//	背景要素の初期位置の取得
+	var bg01_top = $('#parallax-bg-01').offset().top
+		, bg02_top = $('#parallax-bg-02').offset().top
+		, bg03_top = $('#parallax-bg-03').offset().top
+		, bg04_top = $('#parallax-bg-04').offset().top
+		, bg05_top = $('#parallax-bg-05').offset().top;
+	$(window).scroll(function(){
+		var tmp_scrollTop = $(this).scrollTop();
+		//	背景要素の視差効果実装
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		//	背景要素1
+		//	背景要素が常にスクロールに追随する
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		$("#parallax-bg-01").css('background-position','left ' + tmp_scrollTop +'px');
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		//	背景要素2
+		//	要素が画面内の一番上に表示されるようになったら、スクロールに追随する
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		if(tmp_scrollTop > bg02_top){
+			$("#parallax-bg-02").css('background-position','left ' + (tmp_scrollTop - bg02_top) +'px');
+		}else{
+			$("#parallax-bg-02").css('background-position','left top');
+		}
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		//	背景要素3
+		//	要素が画面内の一番上に表示されるようになったら、スクロールに追随して、
+		//	少しずつ下にずれていく
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		if(tmp_scrollTop> bg03_top){
+			$("#parallax-bg-03").css('background-position','left ' + (tmp_scrollTop - bg03_top) * 1.6 +'px');
+		}else{
+			$("#parallax-bg-03").css('background-position','left top');
+		}
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		//	背景要素4
+		//	3と同じ演出
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		if(tmp_scrollTop> bg04_top){
+			$("#parallax-bg-04").css('background-position','left ' + (tmp_scrollTop - bg04_top) * 1.6 +'px');
+		}else{
+			$("#parallax-bg-04").css('background-position','left top');
+		}
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		//	背景要素4
+		//	背景要素が画面内の一番上に表示されるようになるまで、
+		//	スクロールに追随して上から少しずつ下がっていく
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		if(tmp_scrollTop> bg05_top){
+			$("#parallax-bg-05").css('background-position','left top');
+		}else{
+			$("#parallax-bg-05").css('background-position','left ' + (tmp_scrollTop - bg05_top) * .5 +'px');
+		}
+		
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		//	iphoneの360度回転イメージの実装
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		var slide_num = tmp_scrollTop / 100 % 24 % 12 | 0 + 1;
+		if(slide_num < 10){
+			slide_num = '0' + slide_num;
+		}
+		console.log(slide_num);
+		$("#iphone-360").css('top',  iphone_top);
+		$("#iphone-360").css('background-image','url(./img/iphone-' + slide_num + '.png)');
+		
+	});
+
+	//	dotnavi実装
+	var $dots = $('#dot-navi li a');
+	$dots.each(function(index, element){
+		$(this).click(function(event){
+			event.preventDefault();
+			$('html,body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 'slow');
+			
+		});
+	});
+
+});
+</script>
+</body>
+</html>
