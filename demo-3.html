@@ -14,9 +14,7 @@
 	<script src="js/vendor/modernizr-2.6.1.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
 	<style type="text/css">
-	.bg-box{
-		height: 640px;
-		color:#333745;
+	.bg-box{height: 640px; color:#333745;
 		background-size: contain;
 	}
 	.bg-box p {
@@ -87,31 +85,48 @@ $(function(){
 	$(window).scroll(function(){
 		var tmp_scrollTop = $(this).scrollTop();
 		//	背景要素の視差効果実装
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		//	背景要素1
+		//	背景要素が常にスクロールに追随する
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		$("#parallax-bg-01").css('background-position','left ' + tmp_scrollTop +'px');
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		//	背景要素2
+		//	要素が画面内の一番上に表示されるようになったら、スクロールに追随する
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		if(tmp_scrollTop > bg02_top){
 			$("#parallax-bg-02").css('background-position','left ' + (tmp_scrollTop - bg02_top) +'px');
 		}else{
 			$("#parallax-bg-02").css('background-position','left top');
 		}
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		//	背景要素3
+		//	要素が画面内の一番上に表示されるようになったら、スクロールに追随して、
+		//	少しずつ下にずれていく
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		if(tmp_scrollTop> bg03_top){
 			$("#parallax-bg-03").css('background-position','left ' + (tmp_scrollTop - bg03_top) * 1.6 +'px');
 		}else{
 			$("#parallax-bg-03").css('background-position','left top');
 		}
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		//	背景要素4
+		//	3と同じ演出
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		if(tmp_scrollTop> bg04_top){
-			$("#parallax-bg-04").css('background-position','left ' + (tmp_scrollTop - bg04_top) * 1.2 +'px');
+			$("#parallax-bg-04").css('background-position','left ' + (tmp_scrollTop - bg04_top) * 1.6 +'px');
 		}else{
 			$("#parallax-bg-04").css('background-position','left top');
 		}
-		//	背景要素5
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		//	背景要素4
+		//	背景要素が画面内の一番上に表示されるようになるまで、
+		//	スクロールに追随して上から少しずつ下がっていく
+		//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		if(tmp_scrollTop> bg05_top){
 			$("#parallax-bg-05").css('background-position','left top');
 		}else{
-			$("#parallax-bg-05").css('background-position','left ' + (tmp_scrollTop - bg05_top) * .6 +'px');
+			$("#parallax-bg-05").css('background-position','left ' + (tmp_scrollTop - bg05_top) * .5 +'px');
 		}
 	});
 
